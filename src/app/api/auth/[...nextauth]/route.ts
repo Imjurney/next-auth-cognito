@@ -5,7 +5,7 @@ import * as AmazonCognitoIdentity from 'amazon-cognito-identity-js'
 export const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
-      name: 'Credentials',
+      name: 'next-auth-with-cognito-login',
       credentials: {
         email: { label: 'Email', type: 'text' },
         password: { label: 'Password', type: 'password' },
@@ -14,6 +14,7 @@ export const authOptions: NextAuthOptions = {
       authorize(credentials) {
         const userPoolId = process.env.NEXT_PUBLIC_COGNITO_USER_POOL_ID
         const clientId = process.env.NEXT_PUBLIC_COGNITO_CLIENT_ID
+
         const poolData = {
           UserPoolId: userPoolId as string,
           ClientId: clientId as string,
