@@ -3,6 +3,24 @@
 @tailwind utilities;
 
 :root {
+  font-family: 'Pretendard Variable', Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
+    'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+}
+
+@layer components {
+  .box {
+    @apply px-28 py-20 bg-neutral-50 shadow-md;
+    @apply flex flex-col;
+  }
+  .button {
+    @apply bg-indigo-600 text-white rounded-3xl px-20 py-2.5 mt-4;
+    @apply focus:ring focus:ring-indigo-300 hover:bg-indigo-500;
+  }
+}
+
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -24,4 +42,4 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
+} */
